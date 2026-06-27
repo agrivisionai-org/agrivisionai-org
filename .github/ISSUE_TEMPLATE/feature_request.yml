@@ -1,0 +1,139 @@
+```yaml
+name: Feature Request
+description: Suggest a new feature or enhancement for an AGRIVISION AI product.
+title: "[Feature]: "
+labels: ["feature-request", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a feature for AGRIVISION AI.
+
+        We are building AI for global agriculture -- used by extension workers and farmers across India, Africa, Latin America, and Southeast Asia. The more specific you are about the real-world problem, the faster we can ship something useful.
+
+        Before filing, please search [existing issues](../issues?q=is%3Aissue) to avoid duplicates. For security concerns, email security@agrivisionai.org instead of opening an issue.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One sentence describing the feature.
+      placeholder: e.g. Add Swahili voice support to the crop advisory agent
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this solve? Who is hitting it, and in what context (field visit, advisory call, mandi check, weather alert, etc.)?
+      placeholder: |
+        Today, extension workers in [region] cannot [do X] because [reason].
+        This costs them [time / accuracy / trust with farmers] when [situation].
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How should this work? Include UX, inputs/outputs, language or voice considerations, and any AI agent behavior if relevant (advisory, weather/pest, mandi/MSP, field reports).
+      placeholder: |
+        When a user does X, the system should Y.
+        Expected behavior across languages: ...
+        Voice-first flow: ...
+        Data sources / RAG context: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What workarounds or other approaches have you tried or thought about? Why are they not enough?
+      placeholder: |
+        - Tried: ...
+        - Considered: ...
+        - Why these fall short: ...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: beneficiaries
+    attributes:
+      label: Who Benefits Most
+      description: Select the primary user group this feature serves.
+      multiple: true
+      options:
+        - Agricultural extension workers
+        - Smallholder farmers
+        - FPOs / cooperatives
+        - Agribusinesses / input companies
+        - Government / public sector partners
+        - NGOs / development organizations
+        - Researchers / agronomists
+        - Internal AGRIVISION AI team (tooling / ops)
+        - Developers integrating our APIs
+    validations:
+      required: true
+
+  - type: textarea
+    id: regions_languages
+    attributes:
+      label: Regions and Languages Impacted
+      description: Which countries, states, or languages does this matter for? YieldAI Global supports 70+ languages across 40+ countries -- specificity helps us prioritize.
+      placeholder: |
+        Regions: e.g. Karnataka (India), Kenya, Vietnam
+        Languages: e.g. Kannada, Swahili, Vietnamese
+        Crops: e.g. tomato, maize, paddy
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this from your perspective? We will re-triage internally.
+      options:
+        - Critical -- blocking real users in the field today
+        - High -- significant impact, needed this quarter
+        - Medium -- meaningful improvement, no hard deadline
+        - Low -- nice to have / future direction
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: Success Criteria
+      description: How will we know this feature is working? Think in terms of farmer/extension-worker outcomes, not just code shipped.
+      placeholder: |
+        - Extension workers can ...
+        - Latency under ... on 3G networks
+        - Accuracy / advisory quality measured by ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Screenshots, field photos, sample queries, audio clips, links to similar tools, research papers, or anything else that helps us understand.
+      placeholder: Drag and drop files here, or paste links.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: This is a feature request, not a bug report or security issue.
+          required: true
+        - label: I am open to discussing scope and tradeoffs with the AGRIVISION AI team.
+          required: true
+```
