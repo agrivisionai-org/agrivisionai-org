@@ -1,0 +1,13 @@
+# GitHub Sponsors configuration for AGRIVISION AI
+# Building AI-first products for global agriculture
+# https://github.com/agrivisionai-org
+
+# Open Collective: transparent community funding for YieldAI Global
+open_collective: agrivisionai
+
+# Custom funding links: direct donations and investor inquiries
+custom:
+  # Support our mission to bring AI crop intelligence to farmers worldwide
+  - https://agrivisionai.org/donate
+  # Investor relations: back the future of agricultural AI
+  - https://agrivisionai.org/invest
