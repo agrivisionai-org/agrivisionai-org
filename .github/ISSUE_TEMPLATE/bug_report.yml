@@ -1,0 +1,145 @@
+```yaml
+name: Bug Report
+description: Report a bug in YieldAI Global or any AGRIVISION AI product so we can fix it fast.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. AGRIVISION AI is building in public -- clear, reproducible reports help us ship fixes faster for farmers and extension workers around the world.
+
+        Before filing, please:
+        - Search [existing issues](https://github.com/agrivisionai-org) to avoid duplicates.
+        - For security vulnerabilities, do **not** open a public issue. Email us privately at **security@agrivisionai.org**.
+        - For general questions, reach out at **hello@agrivisionai.org**.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Short summary
+      description: A one-line description of the bug.
+      placeholder: "Voice query in Telugu returns empty advisory response"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the actual behavior you observed. Include screenshots, recordings, or screen text where helpful.
+      placeholder: "When I submitted a voice query about cotton pest control in Telugu, the app showed a loading spinner for ~30 seconds and then returned a blank response card."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen instead?
+      placeholder: "The advisory agent should return a Telugu-language response with pest identification and recommended action steps."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Step-by-step instructions so we can reproduce the bug locally.
+      placeholder: |
+        1. Open YieldAI Global app on Android
+        2. Tap the microphone icon on the home screen
+        3. Select language: Telugu
+        4. Ask: "      ?"
+        5. Observe blank response card
+      value: |
+        1.
+        2.
+        3.
+        4.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which product or surface is affected?
+      options:
+        - YieldAI Global -- Mobile app (Android)
+        - YieldAI Global -- Mobile app (iOS)
+        - YieldAI Global -- Web dashboard
+        - YieldAI Global -- Voice-first AI
+        - YieldAI Global -- Field visit reports
+        - YieldAI Global -- Mandi price / MSP signals
+        - YieldAI Global -- Weather & pest alerts
+        - AI crop advisory agent
+        - API / Backend service
+        - Documentation
+        - Website (agrivisionai.org)
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Tell us about where the bug happened. Include device, OS, app or package version, browser, network conditions, language, and country/region.
+      placeholder: |
+        - Device: Redmi Note 12
+        - OS: Android 14
+        - App version: 1.4.2 (build 312)
+        - Language: Telugu (te-IN)
+        - Country / region: India, Telangana
+        - Network: 4G, intermittent
+        - Browser (if web): N/A
+      value: |
+        - Device:
+        - OS:
+        - App / package version:
+        - Language:
+        - Country / region:
+        - Network:
+        - Browser (if web):
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs, errors, or screenshots
+      description: Paste any error messages, stack traces, request IDs, or attach screenshots. Logs will be automatically formatted as code, no backticks needed.
+      render: shell
+      placeholder: |
+        [2026-06-27 10:14:22] ERROR advisory.agent: timeout after 30000ms
+        request_id: req_abc123xyz
+        trace_id: 7f3a...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How badly does this affect users?
+      options:
+        - Critical -- Product unusable, data loss, or affects many farmers / extension workers
+        - High -- Major feature broken, no reasonable workaround
+        - Medium -- Feature partially broken, workaround exists
+        - Low -- Minor issue, cosmetic, or edge case
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I have searched existing issues and confirmed this is not a duplicate.
+          required: true
+        - label: This report does not contain a security vulnerability (those go to security@agrivisionai.org).
+          required: true
+        - label: I am willing to provide additional information or test a fix if needed.
+          required: false
+```
