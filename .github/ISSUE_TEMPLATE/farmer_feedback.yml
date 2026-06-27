@@ -1,0 +1,191 @@
+```yaml
+name: Farmer & Field Feedback
+description: Tell us what would help on your farm or in the field. No tech words needed.
+title: "[Field Feedback]: "
+labels: ["farmer-feedback", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Namaste, Jambo, Hola, Xin cho
+
+        Thank you for taking the time to share your experience with us.
+
+        We are **AGRIVISION AI**, building **YieldAI Global** -- an AI helper for farmers and extension workers across India, Africa, Latin America and Southeast Asia.
+
+        Your words help us build something that actually works in your field. Please write in **any language you are comfortable with** -- English, Hindi, Telugu, Tamil, Kannada, Marathi, Bengali, Swahili, Hausa, Yoruba, Amharic, Spanish, Portuguese, French, Vietnamese, Bahasa, or any other. We will translate.
+
+        There are no wrong answers. Short replies are welcome.
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Who are you?
+      description: Pick the one that fits you best.
+      options:
+        - Farmer
+        - Extension worker / field officer
+        - Agronomist
+        - NGO or cooperative staff
+        - Government / public sector
+        - Researcher or student
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: country
+    attributes:
+      label: Which country are you in?
+      description: State or district is helpful too, if you want to share.
+      placeholder: e.g. India (Telangana), Kenya (Kisumu), Brazil (Minas Gerais)
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: What language do you prefer?
+      description: The language you would like the AI to talk and listen in.
+      placeholder: e.g. Telugu, Swahili, Spanish, English
+    validations:
+      required: true
+
+  - type: dropdown
+    id: crops
+    attributes:
+      label: What do you mainly grow or work with?
+      description: Pick the closest one. You can add more in the comments below.
+      options:
+        - Rice / paddy
+        - Wheat
+        - Maize / corn
+        - Cotton
+        - Sugarcane
+        - Pulses (gram, lentil, tur, etc.)
+        - Oilseeds (groundnut, mustard, soybean, sunflower)
+        - Vegetables
+        - Fruits / orchards
+        - Coffee / tea / cocoa
+        - Livestock / dairy
+        - Mixed / many crops
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: farm_size
+    attributes:
+      label: How big is the farm you work with?
+      description: Rough idea is fine.
+      options:
+        - Less than 1 acre / hectare (small kitchen plot)
+        - 1 to 5 acres
+        - 5 to 25 acres
+        - 25 to 100 acres
+        - More than 100 acres
+        - I work across many farms (extension / NGO)
+        - Prefer not to say
+    validations:
+      required: false
+
+  - type: textarea
+    id: ai_wish
+    attributes:
+      label: What would you like the AI to do for you?
+      description: |
+        Imagine you have a smart helper in your pocket. What should it help you with?
+        Examples: "Tell me when to spray for pests", "Read out mandi prices in Telugu", "Warn me before heavy rain", "Help me write a field visit report", "Compare MSP with today's price".
+      placeholder: Tell us in your own words. Voice notes welcome -- paste a transcript or upload an audio file.
+    validations:
+      required: true
+
+  - type: textarea
+    id: whats_broken
+    attributes:
+      label: What is not working well right now?
+      description: |
+        This can be something in our app, or just something in farming life that nobody is solving.
+        Examples: "The advice is in English only", "Voice does not understand my dialect", "App is too slow on 2G", "Prices shown are wrong for my mandi", "Pest alert came too late".
+      placeholder: Be honest. We will not be upset.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: How do you usually use a phone?
+      description: This helps us design for your reality, not ours.
+      options:
+        - Smartphone with good internet (4G / 5G / Wi-Fi)
+        - Smartphone with patchy internet (2G / 3G, sometimes nothing)
+        - Basic feature phone (calls and SMS only)
+        - I mostly use someone else's phone
+        - I prefer voice calls over apps
+        - Prefer not to say
+    validations:
+      required: false
+
+  - type: dropdown
+    id: input_style
+    attributes:
+      label: How do you prefer to talk to the AI?
+      multiple: true
+      options:
+        - Voice -- I want to speak and listen
+        - Text -- I want to type and read
+        - Pictures -- I want to send photos of my crop
+        - WhatsApp messages
+        - SMS
+        - A call from a real person sometimes
+    validations:
+      required: false
+
+  - type: textarea
+    id: anything_else
+    attributes:
+      label: Anything else you want to tell us?
+      description: |
+        Stories, sketches, photos, audio clips, a complaint, a hope, a question for the founder -- all welcome.
+        You can drag and drop files into this box.
+      placeholder: We read every single one.
+    validations:
+      required: false
+
+  - type: input
+    id: contact
+    attributes:
+      label: Can we get back to you? (optional)
+      description: |
+        Phone number, WhatsApp, email, or LinkedIn -- whichever is easiest.
+        Leave blank if you would rather stay anonymous. We will never share this.
+      placeholder: e.g. +91 9XXXXXXXXX  /  name@example.com
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: A small permission
+      options:
+        - label: I am okay with the AGRIVISION AI team reading this and using it to improve the product. I understand my contact details will not be shared publicly.
+          required: true
+        - label: You may quote my words (without my name or contact) on the AGRIVISION AI website, blog, or social channels.
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Thank you.** Every note here is read by the founding team.
+
+        - Website: https://agrivisionai.org
+        - Email: hello@agrivisionai.org
+        - Security issues: security@agrivisionai.org
+        - LinkedIn: https://linkedin.com/company/113249948
+
+        Built in public by **Vijesh Reddy Golamari** and the AGRIVISION AI team.
+        For the farmer. For the field. For the future.
+```
